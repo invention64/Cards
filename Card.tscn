@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/CardBackground.png" type="Texture" id=1]
+[ext_resource path="res://Textures/Placeholder.png" type="Texture" id=2]
+[ext_resource path="res://Card.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 91.9695, 153.372 )
+
+[node name="Card" type="Area2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 93.0818, 154.872 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 93.079, 154.577 )
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="VSplitContainer" type="VBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 182.0
+margin_bottom = 305.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VSplitContainer"]
+margin_top = -1.0
+margin_right = 177.0
+margin_bottom = 14.0
+rect_min_size = Vector2( 130, 15 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Placeholder Title"
+valign = 1
+
+[node name="Texture" type="TextureRect" parent="VSplitContainer"]
+margin_top = 19.0
+margin_right = 177.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 150, 150 )
+size_flags_horizontal = 5
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Description" type="RichTextLabel" parent="VSplitContainer"]
+margin_top = 173.0
+margin_right = 177.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 150, 100 )
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Placeholder description to hold description text. TODO: Change fonts to custom fonts"
